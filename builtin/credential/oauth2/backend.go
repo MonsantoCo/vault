@@ -111,8 +111,8 @@ func (b *backend) Login(req *logical.Request, username string, password string) 
 
 	if len(policies) == 0 {
 		errStr := "user is not a member of any authorized policy"
-		if len(oauthResponse.Warnings()) > 0 {
-			errStr = fmt.Sprintf("%s; additionally, %s", errStr, oauthResponse.Warnings()[0])
+		if len(oauthResponse.Warnings) > 0 {
+			errStr = fmt.Sprintf("%s; additionally, %s", errStr, oauthResponse.Warnings[0])
 		}
 
 		oauthResponse.Data["error"] = errStr
