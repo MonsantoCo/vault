@@ -16,6 +16,7 @@ import (
 	credCert "github.com/hashicorp/vault/builtin/credential/cert"
 	credGitHub "github.com/hashicorp/vault/builtin/credential/github"
 	credLdap "github.com/hashicorp/vault/builtin/credential/ldap"
+	credOauth "github.com/hashicorp/vault/builtin/credential/oauth2"
 	credOkta "github.com/hashicorp/vault/builtin/credential/okta"
 	credRadius "github.com/hashicorp/vault/builtin/credential/radius"
 	credUserpass "github.com/hashicorp/vault/builtin/credential/userpass"
@@ -99,6 +100,7 @@ func Commands(metaPtr *meta.Meta) map[string]cli.CommandFactory {
 					"userpass": credUserpass.Factory,
 					"ldap":     credLdap.Factory,
 					"okta":     credOkta.Factory,
+					"oauth2":   credOauth.Factory,
 					"radius":   credRadius.Factory,
 					"plugin":   plugin.Factory,
 				},
